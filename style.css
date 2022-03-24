@@ -109,5 +109,16 @@ a#cookie_action_close_header_reject {
 
   a#cookie_action_close_header {
     margin-bottom: 18px !important; } }
+.featured-top .text-box {
+  align-content: center;
+  align-items: center;
+  padding: 10px 10px 10px 20px; }
+  .featured-top .text-box h3 {
+    color: var(--e-global-color-primary);
+    font-weight: 700;
+    font-style: normal; }
+
+.temp-reference-hide {
+  display: none !important; }
 
 /*# sourceMappingURL=style.css.map */

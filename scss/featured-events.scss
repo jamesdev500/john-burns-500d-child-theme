@@ -1,5 +1,21 @@
 
 
 .custom-widget-fe {
-    
+
+}
+.featured-top {
+    .text-box {
+        align-content: center;
+        align-items: center;
+        padding: 10px 10px 10px 20px;
+        h3 {
+            color: var( --e-global-color-primary );
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+}
+
+.temp-reference-hide {
+    display: none !important;
 }
