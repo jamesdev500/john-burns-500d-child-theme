@@ -1,6 +1,7 @@
 <?php 
     $item = $data['event'];
-    
+    $event_url = '#';
+
     $startMonth = tribe_format_date( get_post_meta($item->ID, '_EventStartDate', true), false, 'F' );
     $endMonth = tribe_format_date( get_post_meta($item->ID, '_EventEndDate', true), false, 'F' );
     $startDay = tribe_format_date( get_post_meta($item->ID, '_EventStartDate', true), false, 'j' );
@@ -35,7 +36,7 @@
 ?>
 
 <div class="jet-listing-grid__item jet-listing-dynamic-post-345 colspan-1 featured-top" data-post-id="345">
-    <div data-elementor-type="jet-listing-items text-wrap" data-elementor-id="413" class="elementor elementor-413" data-elementor-settings="[]">
+    <div data-elementor-type="jet-listing-items text-wrap" data-elementor-id="413" class="elementor custom-event-top" data-elementor-settings="[]">
         <div class="elementor-section-wrap">
             <section class="elementor-section elementor-top-section elementor-element elementor-element-fac9217 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fac9217" data-element_type="section" data-settings="">
                 <div class="elementor-container elementor-column-gap-default">
@@ -152,7 +153,6 @@
                                 </div>
                             </div>
                             <?php endif; ?>
-                            <?php if($event_url) : ?>
                             <div class="elementor-element elementor-element-65b8fca elementor-widget elementor-widget-button is-mac" data-id="65b8fca" data-element_type="widget" data-widget_type="button.default">
                                 <div class="elementor-widget-container">
                                     <div class="elementor-button-wrapper">
@@ -169,7 +169,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

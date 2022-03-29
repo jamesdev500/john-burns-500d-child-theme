@@ -1,11 +1,13 @@
 <?php
 $item = $data['item'];
+$event_url = '#';
 
 $startMonth = tribe_format_date(get_post_meta($item->ID, '_EventStartDate', true), false, 'F');
 $endMonth = tribe_format_date(get_post_meta($item->ID, '_EventEndDate', true), false, 'F');
 $startDay = tribe_format_date(get_post_meta($item->ID, '_EventStartDate', true), false, 'j');
 $endDay = tribe_format_date(get_post_meta($item->ID, '_EventEndDate', true), false, 'j');
 $year = tribe_format_date(get_post_meta($item->ID, '_EventStartDate', true), false, 'Y');
+
 if ($startMonth == $endMonth && $startDay != $endDay) {
     $formattedDate = $startMonth . ' ' . $startDay . '-' . $endDay . ', ' . $year;
 } else {
@@ -35,7 +37,7 @@ if (get_post_meta($item->ID, '_EventURL', true)) {
 ?>
 
 <div class="jet-listing-grid__item jet-listing-dynamic-post-344" data-post-id="344">
-    <div data-elementor-type="jet-listing-items" data-elementor-id="417" class="elementor elementor-417" data-elementor-settings="[]">
+    <div data-elementor-type="jet-listing-items" data-elementor-id="417" class="elementor custom-event-box" data-elementor-settings="[]">
         <div class="elementor-section-wrap">
             <section class="elementor-section elementor-top-section elementor-element elementor-element-65904c6 elementor-section-boxed elementor-section-height-default elementor-section-height-default jet-parallax-section" data-id="65904c6" data-element_type="section" data-settings="">
                 <div class="elementor-container elementor-column-gap-default">
@@ -153,24 +155,23 @@ if (get_post_meta($item->ID, '_EventURL', true)) {
                                     </div>
                                 </div>
                             </section>
-                            <?php if ($event_url) : ?>
-                                <div class="elementor-element elementor-element-bd02d5a elementor-widget__width-auto elementor-widget elementor-widget-button is-mac" data-id="bd02d5a" data-element_type="widget" data-widget_type="button.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="elementor-button-wrapper">
-                                            <a class="elementor-button elementor-size-sm" role="button" href="<?= $event_url ?>">
-                                                <span class="elementor-button-content-wrapper">
-                                                    <span class="elementor-button-icon elementor-align-icon-right">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
-                                                            <path d="M4.5 5L3 5C1.89543 5 1 5.89543 1 7L1 14C1 15.1046 1.89543 16 3 16L10 16C11.1046 16 12 15.1046 12 14L12 12.5" stroke="#438AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                            <path d="M13.8392 2.8284L7.8288 8.83881M13.8392 2.8284L13.8392 8.48526M13.8392 2.8284L8.18235 2.8284" stroke="#001A72" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                        </svg> </span>
-                                                    <span class="elementor-button-text">Join Event</span>
-                                                </span>
-                                            </a>
-                                        </div>
+
+                            <div class="elementor-element elementor-element-bd02d5a elementor-widget__width-auto elementor-widget elementor-widget-button is-mac" data-id="bd02d5a" data-element_type="widget" data-widget_type="button.default">
+                                <div class="elementor-widget-container">
+                                    <div class="elementor-button-wrapper">
+                                        <a class="elementor-button elementor-size-sm" role="button" href="<?= $event_url ?>">
+                                            <span class="elementor-button-content-wrapper">
+                                                <span class="elementor-button-icon elementor-align-icon-right">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                                                        <path d="M4.5 5L3 5C1.89543 5 1 5.89543 1 7L1 14C1 15.1046 1.89543 16 3 16L10 16C11.1046 16 12 15.1046 12 14L12 12.5" stroke="#438AE6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        <path d="M13.8392 2.8284L7.8288 8.83881M13.8392 2.8284L13.8392 8.48526M13.8392 2.8284L8.18235 2.8284" stroke="#001A72" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    </svg> </span>
+                                                <span class="elementor-button-text">Join Event</span>
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
-                            <?php endif; ?>
+                            </div>
                         </div>
                     </div>
                 </div>
