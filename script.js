@@ -120,5 +120,71 @@ jQuery(document).ready(function($) {
 		$(".research-package-section").removeClass("hide");
 		$(".office-widget-wrap").addClass("hide");
 	});
+	
+	/****Search Page*****/
+    
+
+            $('.cpt-search-result .jet-listing-grid__items .jet-listing-grid__item').each(function () {
+            var parentName =$(this).find('.elementor-shortcode a.cat-page').text();
+					
+                if (parentName == 'Expertise') {
+					$(this).addClass('expertise-page');
+				}
+					
+                if (parentName == 'Research') {
+					$(this).addClass('research-page');
+				}
+					
+                if (parentName == 'Consulting') {
+					$(this).addClass('consulting-page');
+				}
+					
+                if (parentName == 'Company') {
+					$(this).addClass('company-page');
+				}
+					
+                if (parentName == 'Resources') {
+					$(this).addClass('resources-page');
+				}
+				
+			});
+			
+        
+        $("#PageSearchSel").change(function() {
+
+            var selectpage = $("#PageSearch").find(':selected').val();
+    
+    
+            if (selectpage == "Select Page") {
+                $("article.elementor-post").removeClass("hide");
+            }
+            
+            if (selectpage == "Expertise") {
+                $("article.elementor-post").addClass("hide");
+                $("article.elementor-post.expertise-page").removeClass("hide");
+            }
+    
+            if (selectpage == "Research") {
+                $("article.elementor-post").addClass("hide");
+                $("article.elementor-post.research-page").removeClass("hide");
+            }
+    
+            if (selectpage == "Consulting") {
+                $("article.elementor-post").addClass("hide");
+                $("article.elementor-post.consulting-page").removeClass("hide");
+            }
+            
+            if (selectpage == "Company") {
+                $("article.elementor-post").addClass("hide");
+                $("article.elementor-post.company-page").removeClass("hide");
+            }
+            
+            if (selectpage == "Resources") {
+                $("article.elementor-post").addClass("hide");
+                $("article.elementor-post.resources-page").removeClass("hide");
+            }
+            
+        });
+
 
 } );

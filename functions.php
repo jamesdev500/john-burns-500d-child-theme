@@ -173,3 +173,63 @@ if (!function_exists('partial')) {
         include dirname( __FILE__ ) . '/template-parts/' . $path . '.php';
     }
 }
+
+function register_theme_shortcodes() {
+    add_shortcode( 'category',
+        /**
+         * category shortcode function.
+         *
+         * @param array $atts
+         *
+         * @return string
+         */
+        function ( $atts ) {
+            $atts = shortcode_atts(
+                array(
+                    'id' => '',
+                ),
+                $atts
+            );
+
+            /**
+             * @var int $id Optional Post ID to get categories from.
+             */
+            extract( $atts );
+
+            if ( $id ) {
+                $post_id = $id;
+            } else {
+                global $post;
+
+                if ( $post instanceof WP_Post ) {
+                    $post_id = $post->ID;
+                }
+            }
+
+            if ( empty( $post_id ) ) {
+                $output = '';
+            } else {
+                $output = [];
+
+                if ( $post_categories = get_the_category() ) {
+                    /**
+                     * @var WP_Term $category
+                     */
+                    foreach ( $post_categories as $category ) {
+                        // Builds the category name with its link.
+                        $output[] = "<a class ='cat-page' href='" . get_term_link( $category->term_id ) . "'>{$category->name}</a>";
+
+                        // Build just the category name.
+                        // $output[] = $category->name;
+                    }
+                }
+
+                $output = implode( ', ', $output );
+            }
+
+            return $output;
+        }
+    );
+}
+
+add_action( 'init', 'register_theme_shortcodes' );
