@@ -36,14 +36,14 @@ if (get_post_meta($item->ID, '_EventURL', true)) {
 }
 ?>
 
-<div class="jet-listing-grid__item jet-listing-dynamic-post-344" data-post-id="344">
+<div class="jet-listing-grid__item event-col" data-post-id="344">
     <div data-elementor-type="jet-listing-items" data-elementor-id="417" class="elementor custom-event-box" data-elementor-settings="[]">
         <div class="elementor-section-wrap">
             <section class="elementor-section elementor-top-section elementor-element elementor-element-65904c6 elementor-section-boxed elementor-section-height-default elementor-section-height-default jet-parallax-section" data-id="65904c6" data-element_type="section" data-settings="">
                 <div class="elementor-container elementor-column-gap-default">
                     <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-efbc985" data-id="efbc985" data-element_type="column">
-                        <div class="elementor-widget-wrap elementor-element-populated">
-                            <section class="elementor-section elementor-inner-section elementor-element elementor-element-a67c280 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="a67c280" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+                        <div class="event-box-inner">
+                            <section class="elementor-section elementor-inner-section elementor-element elementor-element-a67c280 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="a67c280" data-element_type="section">
                                 <div class="elementor-container elementor-column-gap-default">
                                     <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-43630d2" data-id="43630d2" data-element_type="column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
@@ -53,7 +53,7 @@ if (get_post_meta($item->ID, '_EventURL', true)) {
                                                 </div>
                                             </div>
                                             <?php if ($client_exclusive) : ?>
-                                                <div class="elementor-element elementor-element-eedd5f9 jedv-enabled--yes elementor-widget elementor-widget-heading is-mac" data-id="eedd5f9" data-element_type="widget" data-widget_type="heading.default">
+                                                <div class="is-esclusive" data-id="eedd5f9" data-element_type="widget" data-widget_type="heading.default">
                                                     <div class="elementor-widget-container">
                                                         <p class="elementor-heading-title elementor-size-default">*Client-Exclusive Event</p>
                                                     </div>
@@ -63,7 +63,7 @@ if (get_post_meta($item->ID, '_EventURL', true)) {
                                     </div>
                                 </div>
                             </section>
-                            <section class="elementor-section elementor-inner-section elementor-element elementor-element-331c3a9 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default" data-id="331c3a9" data-element_type="section" data-settings="{&quot;jet_parallax_layout_list&quot;:[]}">
+                            <section class="event-meta">
                                 <div class="elementor-container elementor-column-gap-default">
                                     <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-744aede" data-id="744aede" data-element_type="column">
                                         <div class="elementor-widget-wrap elementor-element-populated">
@@ -156,7 +156,7 @@ if (get_post_meta($item->ID, '_EventURL', true)) {
                                 </div>
                             </section>
 
-                            <div class="elementor-element elementor-element-bd02d5a elementor-widget__width-auto elementor-widget elementor-widget-button is-mac" data-id="bd02d5a" data-element_type="widget" data-widget_type="button.default">
+                            <div class="event-button">
                                 <div class="elementor-widget-container">
                                     <div class="elementor-button-wrapper">
                                         <a class="elementor-button elementor-size-sm" role="button" href="<?= $event_url ?>">

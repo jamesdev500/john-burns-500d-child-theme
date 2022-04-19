@@ -33,7 +33,7 @@ $featured_events = new WP_Query($featured_events_args);
 $event_posts = $featured_events->posts;
 ?>
 
-<div class="elementor-element" data-id="4be9d0b" data-element_type="widget" data-settings="{&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;1&quot;}" data-widget_type="jet-listing-grid.default">
+<div id="customFeaturedEvents" class="elementor-element" data-id="4be9d0b" data-element_type="widget" data-settings="{&quot;columns&quot;:&quot;3&quot;,&quot;columns_tablet&quot;:&quot;1&quot;}" data-widget_type="jet-listing-grid.default">
     <div class="elementor-widget-container">
         <div class="jet-listing-grid jet-listing">
             <div class="jet-listing-grid__items grid-col-desk-3 grid-col-tablet-1 grid-col-mobile-1 jet-listing-grid--417" data-nav="" data-page="1" data-pages="1" data-listing-source="posts">
@@ -43,11 +43,13 @@ $event_posts = $featured_events->posts;
                 ]) ?>
                 <!-- END featured event -->
                 <!-- START events row -->
-                <?php 
-                    foreach(array_slice($event_posts, 1, 3) as $key => $item) {
-                        partial('event-box', [ 'item' => $item ]);
-                    }
-                ?>
+                <div class="events-bottom">
+                    <?php 
+                        foreach(array_slice($event_posts, 1, 3) as $key => $item) {
+                            partial('event-box', [ 'item' => $item ]);
+                        }
+                    ?>
+                </div>
                 <!-- END events row -->
 
             </div>
