@@ -43,7 +43,7 @@ $event_posts = $featured_events->posts;
                 ]) ?>
                 <!-- END featured event -->
                 <!-- START events row -->
-                <div class="events-bottom">
+                <div class="events-bottom container">
                     <?php 
                         foreach(array_slice($event_posts, 1, 3) as $key => $item) {
                             partial('event-box', [ 'item' => $item ]);

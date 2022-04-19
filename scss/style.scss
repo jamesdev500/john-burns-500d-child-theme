@@ -1,6 +1,9 @@
 
 
 @import 'base';
-@import 'featured-events';
-@import 'from-old-elementor.scss';
-@import 'from-old-elementor-2.scss';
+// @import 'from-old-elementor.scss';
+// @import 'from-old-elementor-2.scss';
+
+#customFeaturedEvents {
+    @import 'featured-events';
+}
