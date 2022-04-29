@@ -1,5 +1,5 @@
 
 
-# how to cimpile scss
+# how to compile scss
 
 sass --watch scss/style.scss:style.css
